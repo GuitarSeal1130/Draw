@@ -8,7 +8,7 @@
 #define IDM_FIG5				5
 #define IDM_FIG6				6
 #define IDM_EXIT				7
-#define IDC_TEST		        8
-#define MAXIMUM                 1000
+#define IDC_TEST		    8
+#define MAXIMUM         1000
 
 #endif

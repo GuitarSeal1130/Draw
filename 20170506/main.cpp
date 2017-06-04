@@ -668,7 +668,7 @@ int PASCAL WinMain(HINSTANCE hInstance,
 	}
 
 	// 初始化窗口，生成窗口并显示更新窗口
-	char title[80] = "案例1 张子一 2015210XXX号";
+	char title[80] = "案例1 张XX 2015210XXX号";
 	HWND hwnd = CreateWindow((TCHAR*)"CCC_WIN",
 		                     (TCHAR*)title,
 		                     WS_OVERLAPPEDWINDOW & ~WS_MAXIMIZEBOX,

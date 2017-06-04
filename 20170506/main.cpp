@@ -9,27 +9,27 @@ using namespace std;
 
 
 
-// µãÓëÏß
+// ç‚¹ä¸çº¿
 void DrawPixels(HWND hwnd, HDC hdc)
 {
 	RECT r;
-	GetClientRect(hwnd, &r);  // »ñµÃ¿Í»§ÇøÓò
-	SetMapMode(hdc, MM_ISOTROPIC);  // ÉèÖÃÓ³ÏñÄ£Ê½
-	SetWindowExtEx(hdc, 100, 100, NULL);  // ÉèÖÃ´°¿Ú×ø±ê·¶Î§
-	SetViewportExtEx(hdc, r.right, r.bottom, NULL);  // ÉèÖÃÊÓ¿Ú×ø±ê·¶Î§
+	GetClientRect(hwnd, &r);  // è·å¾—å®¢æˆ·åŒºåŸŸ
+	SetMapMode(hdc, MM_ISOTROPIC);  // è®¾ç½®æ˜ åƒæ¨¡å¼
+	SetWindowExtEx(hdc, 100, 100, NULL);  // è®¾ç½®çª—å£åæ ‡èŒƒå›´
+	SetViewportExtEx(hdc, r.right, r.bottom, NULL);  // è®¾ç½®è§†å£åæ ‡èŒƒå›´
 
-	FillRect(hdc, &r, (HBRUSH)GetStockObject(WHITE_BRUSH));  // ÉèÖÃ¿Í»§Çø±³¾°
-	TextOut(hdc, 47.5, 49, TEXT("TEST"), lstrlen(TEXT("TEST")));  // Êä³öÒ»¸öÎÄ±¾
+	FillRect(hdc, &r, (HBRUSH)GetStockObject(WHITE_BRUSH));  // è®¾ç½®å®¢æˆ·åŒºèƒŒæ™¯
+	TextOut(hdc, 47.5, 49, TEXT("TEST"), lstrlen(TEXT("TEST")));  // è¾“å‡ºä¸€ä¸ªæ–‡æœ¬
 	for (int i = 10; i<50; i += 1)
 	{
-		SetPixelV(hdc, i, i, RGB(5 * i, 255 - 5 * i, 5 * i));  // Êä³öÒ»¸öÏñËØ
+		SetPixelV(hdc, i, i, RGB(5 * i, 255 - 5 * i, 5 * i));  // è¾“å‡ºä¸€ä¸ªåƒç´ 
 		SetPixelV(hdc, 100 - i, i, RGB(5 * i, 255 - 5 * i, 5 * i));
 		SetPixelV(hdc, 100 - i, 100 - i, RGB(5 * i, 255 - 5 * i, 5 * i));
 		SetPixelV(hdc, i, 100 - i, RGB(5 * i, 255 - 5 * i, 5 * i));
 	}
-	MoveToEx(hdc, 10, 10, NULL);  // ÒÆ¶¯µ½³õÊ¼µã
+	MoveToEx(hdc, 10, 10, NULL);  // ç§»åŠ¨åˆ°åˆå§‹ç‚¹
 	SelectObject(hdc, CreatePen(PS_SOLID, 1, RGB(255, 0, 255)));
-	LineTo(hdc, 90, 10);  // »­ÏßÖÁÖÕÖ¹µã
+	LineTo(hdc, 90, 10);  // ç”»çº¿è‡³ç»ˆæ­¢ç‚¹
 
 	MoveToEx(hdc, 90, 10, NULL);
 	SelectObject(hdc, CreatePen(PS_SOLID, 1, RGB(255, 0, 255)));
@@ -46,14 +46,14 @@ void DrawPixels(HWND hwnd, HDC hdc)
 
 }
 
-// Èı½ÇĞÎ
+// ä¸‰è§’å½¢
 void DrawTriangle(HWND hwnd, HDC hdc)
 {
 	RECT r;
-	GetClientRect(hwnd, &r);  // »ñµÃ¿Í»§ÇøÓò
-	SetMapMode(hdc, MM_ISOTROPIC);  // ÉèÖÃÓ³ÏñÄ£Ê½
-	SetWindowExtEx(hdc, 100, 100, NULL);  // ÉèÖÃ´°¿Ú×ø±ê·¶Î§
-	SetViewportExtEx(hdc, r.right, r.bottom, NULL);  // ÉèÖÃÊÓ¿Ú×ø±ê·¶Î§
+	GetClientRect(hwnd, &r);  // è·å¾—å®¢æˆ·åŒºåŸŸ
+	SetMapMode(hdc, MM_ISOTROPIC);  // è®¾ç½®æ˜ åƒæ¨¡å¼
+	SetWindowExtEx(hdc, 100, 100, NULL);  // è®¾ç½®çª—å£åæ ‡èŒƒå›´
+	SetViewportExtEx(hdc, r.right, r.bottom, NULL);  // è®¾ç½®è§†å£åæ ‡èŒƒå›´
 
 	for (int i = 0; i <= 50; i += 10)
 	{
@@ -72,14 +72,14 @@ void DrawTriangle(HWND hwnd, HDC hdc)
 
 }
 
-// Å×ÎïÏß
+// æŠ›ç‰©çº¿
 void DrawArcs(HWND hwnd, HDC hdc)
 {
 	RECT r;
-	GetClientRect(hwnd, &r);  // »ñµÃ¿Í»§ÇøÓò
-	SetMapMode(hdc, MM_ISOTROPIC);  // ÉèÖÃÓ³ÏñÄ£Ê½
-	SetWindowExtEx(hdc, 400, 300, NULL);  // ÉèÖÃ´°¿Ú×ø±ê·¶Î§
-	SetViewportExtEx(hdc, r.right, r.bottom, NULL);  // ÉèÖÃÊÓ¿Ú×ø±ê·¶Î§
+	GetClientRect(hwnd, &r);  // è·å¾—å®¢æˆ·åŒºåŸŸ
+	SetMapMode(hdc, MM_ISOTROPIC);  // è®¾ç½®æ˜ åƒæ¨¡å¼
+	SetWindowExtEx(hdc, 400, 300, NULL);  // è®¾ç½®çª—å£åæ ‡èŒƒå›´
+	SetViewportExtEx(hdc, r.right, r.bottom, NULL);  // è®¾ç½®è§†å£åæ ‡èŒƒå›´
 
 	int x1, x2 = 350, y1 = 50, y2 = 250;
 	for (x1 = 50; x1 < 200; x1 += 5)
@@ -91,7 +91,7 @@ void DrawArcs(HWND hwnd, HDC hdc)
 	}
 }
 
-// ÕıÏÒÇúÏß
+// æ­£å¼¦æ›²çº¿
 struct pixel
 {
 	double x, y;
@@ -99,10 +99,10 @@ struct pixel
 void DrawCos(HWND hwnd, HDC hdc)
 {
 	RECT r;
-	GetClientRect(hwnd, &r);  // »ñµÃ¿Í»§ÇøÓò
-	SetMapMode(hdc, MM_ISOTROPIC);  // ÉèÖÃÓ³ÏñÄ£Ê½
-	SetWindowExtEx(hdc, 1000, 1000, NULL);  // ÉèÖÃ´°¿Ú×ø±ê·¶Î§
-	SetViewportExtEx(hdc, r.right, r.bottom, NULL);  // ÉèÖÃÊÓ¿Ú×ø±ê·¶Î§
+	GetClientRect(hwnd, &r);  // è·å¾—å®¢æˆ·åŒºåŸŸ
+	SetMapMode(hdc, MM_ISOTROPIC);  // è®¾ç½®æ˜ åƒæ¨¡å¼
+	SetWindowExtEx(hdc, 1000, 1000, NULL);  // è®¾ç½®çª—å£åæ ‡èŒƒå›´
+	SetViewportExtEx(hdc, r.right, r.bottom, NULL);  // è®¾ç½®è§†å£åæ ‡èŒƒå›´
 
 	MoveToEx(hdc, 0, MAXIMUM / 2 - 1, NULL);
 	SelectObject(hdc, CreatePen(PS_SOLID, 1, RGB(0, 0, 0)));
@@ -116,7 +116,7 @@ void DrawCos(HWND hwnd, HDC hdc)
 	SelectObject(hdc, CreatePen(PS_SOLID, 1, RGB(0, 0, 0)));
 	LineTo(hdc, 1000, MAXIMUM / 2 + 1);
 
-	// ÉèÖÃ1000¸öÀëÉ¢µã
+	// è®¾ç½®1000ä¸ªç¦»æ•£ç‚¹
 	pixel pt[MAXIMUM];
 	for (int i = 0; i < MAXIMUM; i++)
 	{
@@ -124,7 +124,7 @@ void DrawCos(HWND hwnd, HDC hdc)
 		pt[i].y = (int)(MAXIMUM / 2 * (1 - sin(2 * 3.14*i / MAXIMUM)));
 	}
 
-	// ½«1000¸öÀëÉ¢µãÁ¬½Ó
+	// å°†1000ä¸ªç¦»æ•£ç‚¹è¿æ¥
 	MoveToEx(hdc, pt[0].x, pt[0].y, NULL);
 	for (int i = 1; i < MAXIMUM; i++)
 	{
@@ -133,7 +133,7 @@ void DrawCos(HWND hwnd, HDC hdc)
 	}
 }
 
-// Ê±ÖÓ
+// æ—¶é’Ÿ
 class Shape
 {
 public:
@@ -433,24 +433,24 @@ void mclock()
 	cwin << hLine << mLine << sLine << org;
 }
 
-/* ¶¯»­: ²»Í¬ÆµÂÊÕıÏÒº¯ÊıµÄĞı×ªÊ¸Á¿ºÏ³É */
+/* åŠ¨ç”»: ä¸åŒé¢‘ç‡æ­£å¼¦å‡½æ•°çš„æ—‹è½¬çŸ¢é‡åˆæˆ */
 void SineComposation(HWND hwnd, HDC hdc)
 {
 	RECT r;
-	GetClientRect(hwnd, &r);  // »ñµÃ¿Í»§ÇøÓò
-	SetMapMode(hdc, MM_ISOTROPIC);  // ÉèÖÃÓ³ÏñÄ£Ê½
-	SetWindowExtEx(hdc, 1000, 1000, NULL);  // ÉèÖÃ´°¿Ú×ø±ê·¶Î§
-	SetViewportExtEx(hdc, r.right, r.bottom, NULL);  // ÉèÖÃÊÓ¿Ú×ø±ê·¶Î§
+	GetClientRect(hwnd, &r);  // è·å¾—å®¢æˆ·åŒºåŸŸ
+	SetMapMode(hdc, MM_ISOTROPIC);  // è®¾ç½®æ˜ åƒæ¨¡å¼
+	SetWindowExtEx(hdc, 1000, 1000, NULL);  // è®¾ç½®çª—å£åæ ‡èŒƒå›´
+	SetViewportExtEx(hdc, r.right, r.bottom, NULL);  // è®¾ç½®è§†å£åæ ‡èŒƒå›´
 	
-	TextOut(hdc, 150, 200, TEXT("²»Í¬ÆµÂÊÕıÏÒº¯ÊıµÄĞı×ªÊ¸Á¿ºÏ³É"), lstrlen(TEXT("²»Í¬ÆµÂÊÕıÏÒº¯ÊıµÄĞı×ªÊ¸Á¿ºÏ³É")));  // ±êÌâ
+	TextOut(hdc, 150, 200, TEXT("ä¸åŒé¢‘ç‡æ­£å¼¦å‡½æ•°çš„æ—‹è½¬çŸ¢é‡åˆæˆ"), lstrlen(TEXT("ä¸åŒé¢‘ç‡æ­£å¼¦å‡½æ•°çš„æ—‹è½¬çŸ¢é‡åˆæˆ")));  // æ ‡é¢˜
 	
-	/* ¶ÁÈ¡ÏµÍ³Ê±¼ä */
+	/* è¯»å–ç³»ç»Ÿæ—¶é—´ */
 	struct tm local;
 	time_t t;
 	t = time(NULL);
 	localtime_s(&local, &t);
 
-	/* »­³öºáÖáºÍ×İÖá,²¢¼Ó´Ö */
+	/* ç”»å‡ºæ¨ªè½´å’Œçºµè½´,å¹¶åŠ ç²— */
 	for (int j = -1; j <= 1; j++)
 	{
 		MoveToEx(hdc, 200, 500+j, NULL);
@@ -464,7 +464,7 @@ void SineComposation(HWND hwnd, HDC hdc)
 		LineTo(hdc, 500+j, 800);
 	}
 	
-	/* Èı¶ÎÊ×Î²ÏàÁ¬µÄĞı×ªÊ¸Á¿µÄÏà¹Ø²ÎÊı */
+	/* ä¸‰æ®µé¦–å°¾ç›¸è¿çš„æ—‹è½¬çŸ¢é‡çš„ç›¸å…³å‚æ•° */
 	double x0=200,y0=500,x1, x2, x3, y1, y2, y3;
 	const int r1=150, r2=75, r3=50;
 	x1 = x0 + r1*cos(3.14*(local.tm_sec) / 30);
@@ -474,7 +474,7 @@ void SineComposation(HWND hwnd, HDC hdc)
 	x3 = x2 + r3*cos(3.14*(local.tm_sec) / 3.75);
 	y3 = y2 - r3*sin(3.14*(local.tm_sec) / 3.75);
 	
-	/* »­³öÈı¶ÎĞı×ªÊ¸Á¿,²¢¼Ó´Ö */
+	/* ç”»å‡ºä¸‰æ®µæ—‹è½¬çŸ¢é‡,å¹¶åŠ ç²— */
 	for(int j = -1; j <= 1; j++)
 		for (int i = -1; i <= 1; i++)
 		{
@@ -492,7 +492,7 @@ void SineComposation(HWND hwnd, HDC hdc)
 		}
 
 	
-	/* »­³ö½ØÖ¹µ½µ±Ç°ÃëµÄÈô¸É¸öÕıÏÒÇúÏßÉ¢µã */
+	/* ç”»å‡ºæˆªæ­¢åˆ°å½“å‰ç§’çš„è‹¥å¹²ä¸ªæ­£å¼¦æ›²çº¿æ•£ç‚¹ */
 	pixel pt[60];
 	for (int i = 0; i <= local.tm_sec; i++)
 	{
@@ -507,7 +507,7 @@ void SineComposation(HWND hwnd, HDC hdc)
 		pt[i].y = f;
 	}
 	
-	/* ½«60¸öÉ¢µãÁ¬½Ó */
+	/* å°†60ä¸ªæ•£ç‚¹è¿æ¥ */
 	for (int i = 0; i < local.tm_sec; i++)
 	{
 		double r, g, b;
@@ -521,11 +521,11 @@ void SineComposation(HWND hwnd, HDC hdc)
 		if (b < 0)
 			b = 0;
 		MoveToEx(hdc, pt[i].x, pt[i].y, NULL);
-		SelectObject(hdc, CreatePen(PS_SOLID, 1, RGB(200-g-b, 200-r-b, 200-r-g)));  // ÓÃÑÕÉ«ÌåÏÖºÏ³ÉÇúÏßÖĞµÄ¸÷ÆµÂÊ³É·Ö
+		SelectObject(hdc, CreatePen(PS_SOLID, 1, RGB(200-g-b, 200-r-b, 200-r-g)));  // ç”¨é¢œè‰²ä½“ç°åˆæˆæ›²çº¿ä¸­çš„å„é¢‘ç‡æˆåˆ†
 		LineTo(hdc, pt[i+1].x, pt[i+1].y);
 	}
 
-	/* »­³öÊ¸Á¿¶ËÓëÇúÏß¶ËµÄÁ¬½ÓÏß */
+	/* ç”»å‡ºçŸ¢é‡ç«¯ä¸æ›²çº¿ç«¯çš„è¿æ¥çº¿ */
 	MoveToEx(hdc, x3, y3, NULL);
 	SelectObject(hdc, CreatePen(PS_DOT, 1, RGB(0, 0, 0)));
 	LineTo(hdc, pt[local.tm_sec].x, pt[local.tm_sec].y);
@@ -559,16 +559,16 @@ long FAR PASCAL ccc_win_proc(HWND hwnd,
 			InvalidateRect(hwnd, NULL, TRUE);
 			break;
 		
-			// ÃüÁîÏûÏ¢´¦Àí
+			// å‘½ä»¤æ¶ˆæ¯å¤„ç†
 	    case WM_COMMAND:
 	    	wmId = LOWORD(wParam);
 		    wmEvent = HIWORD(wParam);
-	        //·ÖÎö²Ëµ¥Ñ¡Ôñ:
+	        //åˆ†æèœå•é€‰æ‹©:
 	        switch (wmId)
 		    {
 		        case IDM_FIG1:
 		            menuId=IDM_FIG1;
-			        InvalidateRect(hwnd,NULL,TRUE);  // ¡°ÇåÆÁ¡±
+			        InvalidateRect(hwnd,NULL,TRUE);  // â€œæ¸…å±â€
 					break;
 		        case IDM_FIG2:
 			        menuId=IDM_FIG2;
@@ -597,7 +597,7 @@ long FAR PASCAL ccc_win_proc(HWND hwnd,
 					return DefWindowProc(hwnd, message, wParam, lParam);
 		    }
 			break;
-        // »æÍ¼ÏûÏ¢´¦Àí
+        // ç»˜å›¾æ¶ˆæ¯å¤„ç†
 		case WM_PAINT:
 		    hdc = BeginPaint(hwnd, &ps);			      
 			if (menuId)
@@ -650,7 +650,7 @@ int PASCAL WinMain(HINSTANCE hInstance,
 	MSG msg;
 	WNDCLASS wndclass;
 
-	// ³õÊ¼»¯´°¿ÚÀà£¬²¢Ïò²Ù×÷ÏµÍ³×¢²á¸Ã´°¿ÚÀà
+	// åˆå§‹åŒ–çª—å£ç±»ï¼Œå¹¶å‘æ“ä½œç³»ç»Ÿæ³¨å†Œè¯¥çª—å£ç±»
 	if (!hPrevInstance)
 	{
 		wndclass.style = CS_HREDRAW | CS_VREDRAW;
@@ -667,8 +667,8 @@ int PASCAL WinMain(HINSTANCE hInstance,
 		RegisterClass(&wndclass);
 	}
 
-	// ³õÊ¼»¯´°¿Ú£¬Éú³É´°¿Ú²¢ÏÔÊ¾¸üĞÂ´°¿Ú
-	char title[80] = "°¸Àı1 ÕÅ×ÓÒ» 2015210268ºÅ";
+	// åˆå§‹åŒ–çª—å£ï¼Œç”Ÿæˆçª—å£å¹¶æ˜¾ç¤ºæ›´æ–°çª—å£
+	char title[80] = "æ¡ˆä¾‹1 å¼ å­ä¸€ 2015210XXXå·";
 	HWND hwnd = CreateWindow((TCHAR*)"CCC_WIN",
 		                     (TCHAR*)title,
 		                     WS_OVERLAPPEDWINDOW & ~WS_MAXIMIZEBOX,
@@ -680,7 +680,7 @@ int PASCAL WinMain(HINSTANCE hInstance,
 		                     NULL,
 		                     hInstance,
 		                     0);
-	// ÏÔÊ¾´°¿Ú
+	// æ˜¾ç¤ºçª—å£
 	ShowWindow(hwnd, nShowCmd);
 	UpdateWindow(hwnd);
 
